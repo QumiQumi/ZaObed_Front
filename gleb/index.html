@@ -57,9 +57,16 @@
     div.appendChild(ul);
     for (var i = 0, ln = array.length; i < ln; i++) {
         var li = document.createElement('li');
-        li.innerHTML = array[i];
+
+        li.innerHTML = ucFirst(array[i]).replace(/\./, "");
         ul.appendChild(li);
     }
 
+    function ucFirst(str) {
+        // только пустая строка в логическом контексте даст false
+        if (!str) return str;
+        return str[0].toUpperCase() + str.slice(1);
+    }
+</script>
 
-    /html>
+</html>
