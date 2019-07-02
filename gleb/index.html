@@ -6,10 +6,9 @@
     <title>
         Страница поставщика
     </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="resources/styles.css">
 </head>
-<!-- сделать подсветку cссылкам -->
-
 
 <body>
     <header class="header">
@@ -26,16 +25,41 @@
     <main>
         <div class="wrapper">
             <div class="orders">
-                <div class="orders order"></div>
+                <div class="card">
+                    <div class="card-header">
+                        Заказ
+                    </div>
+                    <div class="card-body">
+                        <div id="list">
+                            Курица - 3шт., свинина - 10 шт, Карась - 1.
+                        </div>
+                        <form>
+                            <input class="btn btn-primary" type="submit" value="Принять заказ">
+                        </form>
+                    </div>
+                </div>
             </div>
-            <form>
-                <input type="submit" value="Отправить">
-            </form>
-        </div>
     </main>
 
     <footer>
+        <hr>
     </footer>
 </body>
+<script>
+    var string = document.getElementById("list");
+    console.log(string.textContent);
+    var array = string.textContent.split(/,\s/g);
 
-</html>
+    var div = document.getElementById('list');
+    var ul = document.createElement('ul');
+
+    string.innerHTML = '';
+    div.appendChild(ul);
+    for (var i = 0, ln = array.length; i < ln; i++) {
+        var li = document.createElement('li');
+        li.innerHTML = array[i];
+        ul.appendChild(li);
+    }
+
+
+    /html>
