@@ -34,31 +34,23 @@
 
     <main>
         <div class="wrapper">
-            <div class="orders">
-                <div class="card">
+            <div class="orders" id="orders">
+                <!-- <div class="card">
                     <div class="card-header">
                         Заказ
                     </div>
                     <div class="card-body">
                         <div id="list">
-                            Курица - 3шт., свинина - 10 шт, Карась - 1.
-                        </div>
-                        <div class="item">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">К рассмотрению</button>
-                        </div>
-                        <!-- <form>
-                            <input class="btn btn-primary" type="button" value="Принять заказ" data-toggle="modal" data-target="#exampleModal">
-                        </form> -->
-                    </div>
-                </div>
+                            <!-- Курица - 3шт., свинина - 10 шт, Карась - 1. 
             </div>
+            <div class="item">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">К рассмотрению</button>
+            </div>
+        </div>
+        </div> -->
 
-
-            <!-- Button trigger modal
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Launch demo modal
-            </button> -->
-
+            </div>
+            <div id="test"></div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -92,7 +84,7 @@
         <hr>
     </footer>
 </body>
-<script>
+<!-- <script>
     var string = document.getElementById("list");
     console.log(string.textContent);
     var array = string.textContent.split(/,\s/g);
@@ -114,17 +106,14 @@
         if (!str) return str;
         return str[0].toUpperCase() + str.slice(1);
     }
-</script>
-<script>
-    $('#feedbackFormModal').on('shown.bs.modal', function() {
-        $('#myInput').trigger('focus')
-    })
-</script>
+</script> -->
+
 <script src="resources/jquery-3.2.1.slim.min.js"></script>
 <script src="resources/bootstrap-4.0.0.min.js"></script>
 <!-- <script src="resources/popper-1.12.9.min.js"></script> -->
 <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+<script src="resources/get.js"></script>
 
 </html>
