@@ -2,14 +2,28 @@ const url = "http://92.63.70.166/";
 
 function getAndInsertData() {
 
-    console.log("1");
+    //console.log("1");
     $.ajax({
         url: url + "orders",
         type: "GET",
         success: function(data) {
-            console.log(data);
+            //console.log(data);
             insertData(data);
-            return data;
+            //return data;
+
+            $("form").each(function(i, v) {
+                $($.parseHTML(v)).on("hover", function(e) {
+                    e.preventDefault();
+                    alert("HI");/*
+                    e.preventDefault();
+                    console.log("submit");
+                    var id = $("submit").id;
+                    $.post(url + "reply/" + id, {}, function(data, status) {
+                        console.log(status);
+                    });*/
+
+                });
+            });
         }
     });
 
@@ -21,7 +35,7 @@ function insertData(data) {
 
     var htmlElements = "";
     for (var i = 0; i < data.length; i++) {
-        console.log(data[i]);
+        //console.log(data[i]);
         htmlElements += ' <div class="card" id="card' + data[i].id + '">' +
             '<div class="card-header" id="card-header' + data[i].id + '"></div>' +
             ' <div class="card-body" id="card-body' + data[i].id + '">' +
@@ -50,8 +64,8 @@ function insertData(data) {
 }
 
 function parseString(id = "", string = "") {
-    console.log('list' + id);
-    console.log('stroka = ' + string);
+    //console.log('list' + id);
+    //console.log('stroka = ' + string);
     var array = string.split(/,\s/g);
 
     var div = document.getElementById('list' + id);
@@ -80,11 +94,6 @@ function parseString(id = "", string = "") {
 // getAndInsertData('https://swapi.co/api/planets/3/');
 $("document").ready(function() {
     getAndInsertData();
-
-
-    $("form").each(function(i) {
-        console.log(i);
-    });
     
     /*on("submit", function(e) {
         e.preventDefault();
