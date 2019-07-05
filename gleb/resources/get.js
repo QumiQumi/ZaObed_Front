@@ -21,7 +21,7 @@ function getAndInsertData(url, data = {}) {
                 }
                 // Examine the text in the response  
                 response.json().then(function(data) {
-                    console.log(data);
+                    console.log(JSON.parse(JSON.stringify(data)));
                     insertData(data);
                     return (data);
                 });
@@ -39,13 +39,16 @@ function insertData(data) {
     var htmlElements = "";
     for (var i = 0; i < data.orders.length; i++) {
         console.log(data.orders[i]);
-        htmlElements += ' <div class="card" id="card' + i + '">' +
+        htmlElements += ' <div class="card" id="card' + data.orders[i].id + '">' +
             '<div class="card-header" id="card-header' + i + '"></div>' +
             ' <div class="card-body" id="card-body' + i + '">' +
             '<div id="list' + i + '"> </div>' +
-            '<div class="item">' +
-            '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">К рассмотрению</button>' +
-            '</div>' +
+            // '<div class="item">' +
+            `<form class="item" id="${i}">` +
+            `<input type="button" class="btn btn-primary" value="Принять заказ"></input>` +
+            // '<input type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">К рассмотрению</input>' +
+            `</form>` +
+            // '</div>' +
             '</div>' +
             '</div>';
 
@@ -86,5 +89,6 @@ function parseString(id = "", string = "") {
         return str[0].toUpperCase() + str.slice(1);
     }
 }
+// getAndInsertData('https://swapi.co/api/planets/3/');
 getAndInsertData('resources/json.json');
 // insertData(data);
